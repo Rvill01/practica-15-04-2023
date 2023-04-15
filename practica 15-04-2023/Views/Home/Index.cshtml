@@ -1,0 +1,177 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    IEnumerable<string> strList = new List<string> { "POO", "TW", "MAT3", "FIS1" };
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Mantenimiento equipo</h1>
+        <h2 class="Mantenimiento equipo"></h2>
+    </div>
+
+    <div
+    <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblNombreUsuario", "Nombre de usuario", new{@class=""})
+            </div>
+            
+            <div class="col-sm-10">
+                @Html.TextBox("txtNombreU", "", new{@class="form-control"})
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblContrasena", "Contraseña", new{@class=""})
+            </div>
+
+            <div class="col-sm-10">
+                @Html.Password("passContrasena", "", new{@class="form-control"})
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+    
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblGenero", "Genero", new{@class=""})
+            </div>
+
+            <div class="col-sm-5">
+                @Html.RadioButton("rbSexo","Masculino", true,new{id="masculino"} )
+                @Html.Label("lblmasculino", "Masculino", new{@class=""})
+            </div>
+            <div class="col-sm-5">
+                @Html.RadioButton("rbSexo","Femenino", false,new{id="femenino"} )
+                @Html.Label("lblfemenino", "Femenino", new{@class=""})
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblDireccion", "Dirección", new{@class=""})
+            </div>
+
+            <div class="col-sm-10">
+                @Html.TextArea("txta", "", new{@class="form-control"})
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblPasatiempos", "Pasatiempos", new{@class=""})
+            </div>
+
+            <div class="col">
+                @Html.CheckBox("Bailar")
+                @Html.Label("lblBailar", "Bailar", new{@class=""})
+            </div>
+            <div class="col">
+                @Html.CheckBox("Correr")
+                @Html.Label("lblCorrer", "Correr", new{@class=""})
+            </div>
+            <div class="col">
+                @Html.CheckBox("Escalar")
+                @Html.Label("lblEscalar", "Escalar", new{@class=""})
+            </div>
+            <div class="col">
+                @Html.CheckBox("Peliculas")
+                @Html.Label("lblPeliculas", "Peliculas", new{@class=""})
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblCurso", "Curso", new{@class=""})
+            </div>
+
+            <div class="col-sm-10">
+                @Html.DropDownList("ddlCurso", new SelectList(strList,
+                strList.FirstOrDefault()), "--Seleccionar curso ----" )
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="form-group row">
+
+            <div class="col-sm-2">
+                @Html.Label("lblConocimiento", "Conocimiento", new{@class=""})
+            </div>
+
+            <div class="col-sm-10">
+                @Html.ListBox("Seleccionar habilidades", new List<SelectListItem>{
+                new SelectListItem {Text = "C #", Value = "1"},
+                new SelectListItem {Text = "ASP.NET", Value = "2"},
+                new SelectListItem {Text = "ASP.NET Core", Value = "3"},
+                new SelectListItem {Text = "Azure", Value = "4"}
+                })
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <br />
+    </div>
+    <div class="row">
+        <div class="form-group row">
+            @Html.ActionLink("Guardar","Guardar", "Home" )
+        </div>
+
+    </div>
+</body>
+
+
+
+
